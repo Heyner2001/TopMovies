@@ -16,6 +16,14 @@
 		3A8D1F502BF13DE8003BA3E0 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1F4F2BF13DE8003BA3E0 /* LoaderView.swift */; };
 		3A8D1F562BF13F8E003BA3E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1F552BF13F8E003BA3E0 /* HomeViewController.swift */; };
 		3A8D1F582BF146FC003BA3E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1F572BF146FC003BA3E0 /* HomeViewModel.swift */; };
+		3A8D1F5B2BF15033003BA3E0 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1F5A2BF15033003BA3E0 /* AppColors.swift */; };
+		3A8D1F702BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D1F6D2BF15DE8003BA3E0 /* ELEGANT TYPEWRITER Regular.ttf */; };
+		3A8D1F712BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D1F6E2BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Bold.ttf */; };
+		3A8D1F722BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D1F6F2BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Light.ttf */; };
+		3A8D1F742BF15F64003BA3E0 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1F732BF15F64003BA3E0 /* AppFonts.swift */; };
+		3A8D1F762BF16272003BA3E0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1F752BF16272003BA3E0 /* HomeView.swift */; };
+		3A8D1F782BF178A1003BA3E0 /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1F772BF178A1003BA3E0 /* MovieCellView.swift */; };
+		3A8D1F7A2BF18C1C003BA3E0 /* ShortMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1F792BF18C1C003BA3E0 /* ShortMovieModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		3A8D1F4F2BF13DE8003BA3E0 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		3A8D1F552BF13F8E003BA3E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3A8D1F572BF146FC003BA3E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3A8D1F5A2BF15033003BA3E0 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		3A8D1F6D2BF15DE8003BA3E0 /* ELEGANT TYPEWRITER Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ELEGANT TYPEWRITER Regular.ttf"; sourceTree = "<group>"; };
+		3A8D1F6E2BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ELEGANT TYPEWRITER Bold.ttf"; sourceTree = "<group>"; };
+		3A8D1F6F2BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ELEGANT TYPEWRITER Light.ttf"; sourceTree = "<group>"; };
+		3A8D1F732BF15F64003BA3E0 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		3A8D1F752BF16272003BA3E0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3A8D1F772BF178A1003BA3E0 /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
+		3A8D1F792BF18C1C003BA3E0 /* ShortMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortMovieModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +118,10 @@
 				3A8D1F4B2BF136FF003BA3E0 /* Router */,
 				3A8D1F152BF05269003BA3E0 /* AppDelegate.swift */,
 				3A8D1F172BF05269003BA3E0 /* SceneDelegate.swift */,
-				3A8D1F1E2BF0526B003BA3E0 /* Assets.xcassets */,
 				3A8D1F202BF0526B003BA3E0 /* LaunchScreen.storyboard */,
 				3A8D1F232BF0526B003BA3E0 /* Info.plist */,
+				3A8D1F5C2BF15840003BA3E0 /* Assets */,
+				3A8D1F592BF15009003BA3E0 /* Commons */,
 			);
 			path = TopMoview;
 			sourceTree = "<group>";
@@ -156,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				3A8D1F552BF13F8E003BA3E0 /* HomeViewController.swift */,
+				3A8D1F752BF16272003BA3E0 /* HomeView.swift */,
+				3A8D1F772BF178A1003BA3E0 /* MovieCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,8 +182,29 @@
 		3A8D1F542BF13F7D003BA3E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A8D1F792BF18C1C003BA3E0 /* ShortMovieModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3A8D1F592BF15009003BA3E0 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3A8D1F5A2BF15033003BA3E0 /* AppColors.swift */,
+				3A8D1F732BF15F64003BA3E0 /* AppFonts.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		3A8D1F5C2BF15840003BA3E0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3A8D1F6E2BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Bold.ttf */,
+				3A8D1F6F2BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Light.ttf */,
+				3A8D1F6D2BF15DE8003BA3E0 /* ELEGANT TYPEWRITER Regular.ttf */,
+				3A8D1F1E2BF0526B003BA3E0 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +313,9 @@
 			files = (
 				3A8D1F1F2BF0526B003BA3E0 /* Assets.xcassets in Resources */,
 				3A8D1F222BF0526B003BA3E0 /* Base in Resources */,
+				3A8D1F712BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Bold.ttf in Resources */,
+				3A8D1F702BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Regular.ttf in Resources */,
+				3A8D1F722BF15DE9003BA3E0 /* ELEGANT TYPEWRITER Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,10 +340,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8D1F7A2BF18C1C003BA3E0 /* ShortMovieModel.swift in Sources */,
+				3A8D1F762BF16272003BA3E0 /* HomeView.swift in Sources */,
 				3A8D1F562BF13F8E003BA3E0 /* HomeViewController.swift in Sources */,
 				3A8D1F582BF146FC003BA3E0 /* HomeViewModel.swift in Sources */,
+				3A8D1F782BF178A1003BA3E0 /* MovieCellView.swift in Sources */,
 				3A8D1F162BF05269003BA3E0 /* AppDelegate.swift in Sources */,
 				3A8D1F502BF13DE8003BA3E0 /* LoaderView.swift in Sources */,
+				3A8D1F742BF15F64003BA3E0 /* AppFonts.swift in Sources */,
+				3A8D1F5B2BF15033003BA3E0 /* AppColors.swift in Sources */,
 				3A8D1F182BF05269003BA3E0 /* SceneDelegate.swift in Sources */,
 				3A8D1F4E2BF137FB003BA3E0 /* Router.swift in Sources */,
 			);

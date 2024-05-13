@@ -20,6 +20,8 @@ final class Router: RouterType {
 
     init(rootViewController: UIViewController) {
         self.navigationController = UINavigationController(rootViewController: rootViewController)
+        self.navigationController.navigationBar.backgroundColor = UIColor.navyBlue
+        self.navigationController.navigationBar.tintColor = UIColor.white
     }
 
     func showLoader() {
