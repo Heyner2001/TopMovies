@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HomeViewModelType: AnyObject {
+protocol HomeViewModelType {
     func showLoader()
     func stopLoader()
 }
