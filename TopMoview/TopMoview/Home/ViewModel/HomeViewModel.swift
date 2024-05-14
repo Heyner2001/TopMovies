@@ -10,8 +10,7 @@ import Foundation
 protocol HomeViewModelType {
     var viewController: HomeViewControllerType? { get set }
 
-    func showLoader()
-    func stopLoader()
+    func navigateToDetail(index: Int)
     func getMovies()
 }
 
@@ -19,6 +18,7 @@ final class HomeViewModel: HomeViewModelType {
     var viewController: HomeViewControllerType?
     var router: RouterType?
     private let getMoviesUseCase: GetTopMoviesUseCase?
+    private var movieModels: [MovieModel] = []
     
     
     init(
@@ -32,20 +32,13 @@ final class HomeViewModel: HomeViewModelType {
                 // TODO: Error case that need be handler
                 return
             }
-
+            self?.movieModels = movies
             self?.viewController?.refreshTableViewData(movies)
         }
         self.getMoviesUseCase?.execute()
-        
-        
-        
     }
 
-    func showLoader() {
-        self.router?.showLoader()
-    }
-
-    func stopLoader() {
-        self.router?.stopLoader()
+    func navigateToDetail(index: Int) {
+        self.router?.goToDetail(movieModel: self.movieModels[index])
     }
 }

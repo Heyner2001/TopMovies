@@ -13,7 +13,7 @@ protocol HomeViewControllerType {
 
 final class HomeViewController: UIViewController, HomeViewControllerType {
     private var viewModel: HomeViewModelType?
-    private let homeView = HomeView()
+    private lazy var homeView = HomeView(delegate: self)
 
     init(viewModel: HomeViewModelType?) {
         self.viewModel = viewModel
@@ -66,5 +66,11 @@ final class HomeViewController: UIViewController, HomeViewControllerType {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension HomeViewController: HomeViewDelegate {
+    func navigateToDetail(index: Int) {
+        self.viewModel?.navigateToDetail(index: index)
     }
 }

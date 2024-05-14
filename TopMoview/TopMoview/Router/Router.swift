@@ -12,6 +12,7 @@ protocol RouterType {
 
     func showLoader()
     func stopLoader()
+    func goToDetail(movieModel: MovieModel)
 }
 
 final class Router: RouterType {
@@ -25,10 +26,15 @@ final class Router: RouterType {
     }
 
     func showLoader() {
-        print("Showing Loader")
+//      TODO: Create Loader
     }
     
     func stopLoader() {
-        print("Loader Stopped")
+//      TODO: Stop Loader
+    }
+
+    func goToDetail(movieModel: MovieModel) {
+        print("Mostrando detalle \(movieModel.name)")
+//      TODO: Create Detal and push viewController
     }
 }

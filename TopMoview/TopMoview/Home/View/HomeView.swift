@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol HomeViewDelegate: AnyObject {
+    func navigateToDetail(index: Int)
+}
+
 final class HomeView: UIView {
+    private weak var delegate: HomeViewDelegate?
     var moviesModel: [MovieModel]?
 
     private lazy var titleLabel: UILabel = {
@@ -31,7 +36,8 @@ final class HomeView: UIView {
         return tableView
     }()
 
-    init() {
+    init(delegate: HomeViewDelegate) {
+        self.delegate = delegate
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -102,5 +108,9 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.navigateToDetail(index: indexPath.row)
     }
 }
