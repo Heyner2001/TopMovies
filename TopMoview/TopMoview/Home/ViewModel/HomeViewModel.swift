@@ -8,15 +8,37 @@
 import Foundation
 
 protocol HomeViewModelType {
+    var viewController: HomeViewControllerType? { get set }
+
     func showLoader()
     func stopLoader()
+    func getMovies()
 }
 
 final class HomeViewModel: HomeViewModelType {
-    private weak var router: RouterType?
+    var viewController: HomeViewControllerType?
+    var router: RouterType?
+    private let getMoviesUseCase: GetTopMoviesUseCase?
+    
+    
+    init(
+        getMoviesUseCase: GetTopMoviesUseCase = GetTopMoviesUseCase()) {
+        self.getMoviesUseCase = getMoviesUseCase
+    }
 
-    init(router: RouterType) {
-        self.router = router
+    func getMovies() {
+        self.getMoviesUseCase?.onSuccess = { [weak self] moviesModel in
+            guard let movies = moviesModel else {
+                // TODO: Error case that need be handler
+                return
+            }
+
+            self?.viewController?.refreshTableViewData(movies)
+        }
+        self.getMoviesUseCase?.execute()
+        
+        
+        
     }
 
     func showLoader() {

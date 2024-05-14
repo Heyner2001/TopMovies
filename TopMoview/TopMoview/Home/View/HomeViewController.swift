@@ -7,11 +7,16 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
-    var viewModel: HomeViewModelType?
+protocol HomeViewControllerType {
+    func refreshTableViewData(_ movies: [MovieModel])
+}
+
+final class HomeViewController: UIViewController, HomeViewControllerType {
+    private var viewModel: HomeViewModelType?
     private let homeView = HomeView()
 
-    init() {
+    init(viewModel: HomeViewModelType?) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = UIColor.cream
     }
@@ -21,7 +26,17 @@ final class HomeViewController: UIViewController {
         self.setUpSubview()
         self.setUpConstraints()
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.viewModel?.getMovies()
+    }
+
+    func refreshTableViewData(_ movies: [MovieModel]) {
+        self.homeView.moviesModel = movies
+        self.homeView.updateTableViewData()
+    }
+
     private func setUpSubview() {
         self.view.addSubview(self.homeView)
     }

@@ -19,17 +19,27 @@ final class MovieCellView: UITableViewCell {
         return imageView
     }()
     
-    private var movieNameContainerView: UIView = UIView()
-    private var rateContainerView: UIView = UIView()
-    private var dateContainerView: UIView = UIView()
+    private var movieNameContainerView: RoundedTagViewType = RoundedTagView()
+    private var rateContainerView: RoundedTagViewType = RoundedTagView()
+    private var dateContainerView: RoundedTagViewType = RoundedTagView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = UIColor.clear
+        self.setUpSubviews()
+        self.setUpConstraints()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.backgroundImageView.image = nil
+        self.movieNameContainerView.removeSubviews()
+        self.rateContainerView.removeSubviews()
+        self.dateContainerView.removeSubviews()
     }
 
     private func setUpSubviews() {
@@ -95,49 +105,10 @@ final class MovieCellView: UITableViewCell {
         )
     }
 
-    private func createLabelView(text: String) -> UIView {
-        let view = UIView()
-        view.backgroundColor = UIColor.whiteSmoke
-        view.alpha = 0.8
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        let label = UILabel()
-        label.font = UIFont.elegantTypeWriterFont(weidth: .regular, size: 14)
-        label.textColor = UIColor.navyBlue
-        label.text = text
-        label.translatesAutoresizingMaskIntoConstraints = false
-        let containerVerticalInset = 4.0
-        let containerHorizontalInset = 6.0
-        
-        view.addSubview(label)
-        label.sizeToFit()
-        view.layer.cornerRadius = (label.frame.height + containerVerticalInset * 2) / 2
-        
-        label.leftAnchor.constraint(
-            equalTo: view.leftAnchor,
-            constant: containerHorizontalInset
-        ).isActive = true
-        label.rightAnchor.constraint(
-            equalTo: view.rightAnchor,
-            constant: -containerHorizontalInset
-        ).isActive = true
-        label.topAnchor.constraint(
-            equalTo: view.topAnchor,
-            constant: containerVerticalInset
-        ).isActive = true
-        label.bottomAnchor.constraint(
-            equalTo: view.bottomAnchor,
-            constant: -containerVerticalInset
-        ).isActive = true
-
-        return view
-    }
-
-    func setupCellData(_ model: ShortMovieModel) {
-        self.movieNameContainerView = self.createLabelView(text: model.name)
-        self.rateContainerView = self.createLabelView(text: "Rate")
-        self.dateContainerView = self.createLabelView(text: model.date)
-        self.setUpSubviews()
-        self.setUpConstraints()
+    func setupCellData(_ model: MovieModel) {
+        self.backgroundImageView.image = model.backdropImage
+        self.movieNameContainerView.insertLabel(model.name)
+        self.rateContainerView.insertLabel("Rate: \(model.rate)")
+        self.dateContainerView.insertLabel(model.releaseDate)
     }
 }
