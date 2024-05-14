@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol RouterType: AnyObject {
+protocol RouterType {
     var navigationController: UINavigationController { get }
 
     func showLoader()

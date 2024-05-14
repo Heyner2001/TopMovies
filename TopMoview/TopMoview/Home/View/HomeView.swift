@@ -8,6 +8,8 @@
 import UIKit
 
 final class HomeView: UIView {
+    var moviesModel: [MovieModel]?
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "TopMovies"
@@ -72,25 +74,32 @@ final class HomeView: UIView {
 
         self.titleLabel.sizeToFit()
     }
+
+    func updateTableViewData() {
+        DispatchQueue.main.async { [weak self] in
+            self?.moviesTableView.reloadData()
+        }
+    }
 }
 
 extension HomeView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        self.moviesModel?.count ?? 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: MovieCellView.identifier,
             for: indexPath)
-        guard let movieCellView = cell as? MovieCellView else {
+        guard let movieCellView = cell as? MovieCellView,
+                let moviesModel = self.moviesModel?[indexPath.row] else {
             return UITableViewCell()
         }
-        
-        movieCellView.setupCellData(ShortMovieModel(name: "Title IDK", rate: 0, date: "02-12-2008"))
+
+        movieCellView.setupCellData(moviesModel)
         return movieCellView
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
